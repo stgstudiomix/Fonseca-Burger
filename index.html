@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Fonseca Burgers</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/Bvhng7L7/cc21d796204923937547f509844f7eba-hamburger-icon-hamburger.webp">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -99,7 +100,25 @@
     .hero {
       text-align: center;
       padding: 2.5rem 1rem 2rem;
-      background: linear-gradient(180deg, rgba(255,178,44,.08) 0%, rgba(29,22,22,0) 100%);
+      height: 500px;
+      background-image: url('https://i.postimg.cc/mgXjGR0R/Frame-6.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+      text-align: center;
+      padding: 2.5rem 1rem 2rem;
+      height: 400px;
+      background-image: url('https://i.postimg.cc/qRf7thP4/burger.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-bottom: 20px;
+    }
     }
 
     .hero h1 {
@@ -110,7 +129,7 @@
     }
 
     .hero p {
-      color: #b8a8a8;
+      color: transparent;
       font-size: .95rem;
       max-width: 340px;
       margin: 0 auto;
@@ -193,6 +212,7 @@
     @media (min-width: 640px) {
       .grid { grid-template-columns: repeat(2, 1fr); }
       .hero h1 { font-size: 2.4rem; }
+      
     }
 
     @media (min-width: 900px) {
@@ -687,6 +707,13 @@
   </nav>
 
   <main class="container" id="menuContainer">
+     <!-- Hambúrgueres -->
+    <h2 class="section-title" id="hamburgers"><span class="emoji">🍔</span> Hambúrgueres</h2>
+    <p class="section-sub">Pão, hambúrguer artesanal e muito sabor</p>
+    <div class="grid" id="gridBurgers"></div>
+
+    <div class="divider"></div>
+
     <!-- Combos -->
     <h2 class="section-title" id="combos"><span class="emoji">🍟</span> Combos</h2>
     <p class="section-sub">Hambúrguer + batata pequena + refrigerante lata</p>
@@ -694,12 +721,7 @@
 
     <div class="divider"></div>
 
-    <!-- Hambúrgueres -->
-    <h2 class="section-title" id="hamburgers"><span class="emoji">🍔</span> Hambúrgueres</h2>
-    <p class="section-sub">Pão, hambúrguer artesanal e muito sabor</p>
-    <div class="grid" id="gridBurgers"></div>
-
-    <div class="divider"></div>
+   
 
     <!-- Batatas -->
     <h2 class="section-title" id="batatas"><span class="emoji">🥔</span> Batatas Fritas</h2>
@@ -779,24 +801,26 @@
     const ADDONS = [
       { id: 'bacon', name: 'Bacon crocante', price: 4.00 },
       { id: 'burger120', name: 'Hambúrguer extra', price: 7.90 },
-      { id: 'cheddar', name: 'Cheddar', price: 4.00 },
-      { id: 'mucarela', name: 'Muçarela', price: 2.99 },
+      { id: 'cheddar', name: 'Cheddar', price: 3.00 },
+      { id: 'mucarela', name: 'Muçarela', price: 2.00 },
       { id: 'cebola', name: 'Cebola caramelizada', price: 3.00 },
       { id: 'molho', name: 'Molho da casa', price: 2.50 },
     ];
 
     const COMBOS = [
-      { id: 'combo-original', name: 'Combo Original', price: 29.90, desc: 'Pão, hambúrguer artesanal, molho especial e queijo à sua escolha (cheddar ou muçarela). Acompanha batata pequena + refrigerante lata.' },
-      { id: 'combo-cheddar', name: 'Combo Cheddar House', price: 34.90, desc: 'Pão, hambúrguer artesanal, molho especial, queijo cheddar e bacon crocante. Acompanha batata pequena + refrigerante lata.' },
-      { id: 'combo-bacon', name: 'Combo Prime Bacon', price: 37.90, desc: 'Pão, hambúrguer artesanal, molho especial, queijo (cheddar ou muçarela), bacon crocante e cebola caramelizada. Acompanha batata pequena + refrigerante lata.' },
-      { id: 'combo-cheddar-duplo', name: 'Combo Cheddar Duplo', price: 41.00, desc: 'Pão, 2 hambúrguers artesanais + cheddar, molho especial e cebola caramelizada. Acompanha batata pequena + refrigerante lata.' },
+      { id: 'combo-original', name: 'Combo Original', price: 29.90, desc: 'Pão brioche, hambúrguer artesanal, molho especial e queijo à sua escolha (cheddar ou muçarela).' },
+      { id: 'combo-cheddar', name: 'Combo Cheddar House', price: 34.90, desc: 'Pão brioche, hambúrguer artesanal, molho especial, queijo cheddar e bacon crocante.' },
+      { id: 'combo-cheddar-caramelizado', name: 'Combo Cheddar Caramelizado', price: 34.90, desc: 'Pão brioche, hambúrguer artesanal, molho da casa, queijo cheddar e cebola caramelizada. ' },
+      { id: 'combo-bacon', name: 'Combo Prime Bacon', price: 37.90, desc: 'Pão brioche, hambúrguer artesanal, molho especial, queijo (cheddar ou muçarela), bacon crocante e cebola caramelizada. ' },
+      { id: 'combo-cheddar-duplo', name: 'Combo Cheddar Duplo', price: 41.00, desc: 'Pão, 2 hambúrguers artesanais + cheddar, molho especial e cebola caramelizada. ' },
     ];
 
     const BURGERS = [
-      { id: 'burger-original', name: 'Original', price: 19.90, desc: 'Pão, hambúrguer artesanal, molho especial e queijo à sua escolha (cheddar ou muçarela).' },
-      { id: 'burger-cheddar', name: 'Cheddar House', price: 24.90, desc: 'Pão, hambúrguer artesanal, molho da casa, queijo cheddar e bacon crocante.' },
-      { id: 'burger-bacon', name: 'Prime Bacon', price: 27.90, desc: 'Pão, hambúrguer artesanal, molho especial, queijo (cheddar ou muçarela), bacon crocante e cebola caramelizada.' },
-      { id: 'cheddar-duplo', name: 'Cheddar Duplo', price: 31.99, desc: 'Pão, 2 hambúrguers artesanais + cheddar, molho especial e cebola caramelizada.' },
+      { id: 'burger-original', name: 'Original', price: 19.90, desc: 'Pão brioche, hambúrguer artesanal, molho especial e queijo à sua escolha (cheddar ou muçarela).' },
+      { id: 'burger-cheddar', name: 'Cheddar House', price: 24.90, desc: 'Pão brioche, hambúrguer artesanal, molho da casa, queijo cheddar e bacon crocante.' },
+      { id: 'burger-cheddar-caramelizado', name: 'Cheddar Caramelizado', price: 24.90, desc: 'Pão brioche, hambúrguer artesanal, molho da casa, queijo cheddar e cebola caramelizada.' },
+      { id: 'burger-bacon', name: 'Prime Bacon', price: 27.90, desc: 'Pão brioche, hambúrguer artesanal, molho especial, queijo (cheddar ou muçarela), bacon crocante e cebola caramelizada.' },
+      { id: 'cheddar-duplo', name: 'Cheddar Duplo', price: 31.99, desc: 'Pão brioche, 2 hambúrguers artesanais + cheddar, molho especial e cebola caramelizada.' },
     ];
 
     const POTATOES = [
