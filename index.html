@@ -100,8 +100,6 @@
     .hero {
       text-align: center;
       padding: 2.5rem 1rem 2rem;
-      height: 500px;
-      background-image: url('https://i.postimg.cc/mgXjGR0R/Frame-6.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -112,8 +110,6 @@
       .hero {
       text-align: center;
       padding: 2.5rem 1rem 2rem;
-      height: 400px;
-      background-image: url('https://i.postimg.cc/qRf7thP4/burger.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -129,7 +125,7 @@
     }
 
     .hero p {
-      color: transparent;
+      color: rgb(204, 204, 204);
       font-size: .95rem;
       max-width: 340px;
       margin: 0 auto;
@@ -195,6 +191,19 @@
       gap: .5rem;
       scroll-margin-top: 110px;
     }
+    .card-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    cursor: pointer;
+    transition: transform .3s ease;
+}
+
+.card-image:hover {
+    transform: scale(1.02);
+}
 
     .section-sub {
       color: #b8a8a8;
@@ -694,13 +703,13 @@
   </header>
 
  <section class="hero">
- <p>Carne suculenta, pão brioche e ingredientes selecionados. Peça agora e receba em minutos!</p>
+ <p>Carne suculenta, pão de qualidade e ingredientes selecionados. Peça agora e receba em minutos!</p>
   </section>
 
   <nav class="cat-nav">
     <div class="cat-nav-inner" id="catNav">
-      <a href="#combos" class="cat-pill active">Combos</a>
       <a href="#hamburgers" class="cat-pill">Hambúrgueres</a>
+      <a href="#combos" class="cat-pill active">Combos</a>
       <a href="#batatas" class="cat-pill">Batatas</a>
       <a href="#bebidas" class="cat-pill">Bebidas</a>
     </div>
@@ -808,28 +817,28 @@
     ];
 
     const COMBOS = [
-      { id: 'combo-original', name: 'Combo Original', price: 29.90, desc: 'Pão brioche, hambúrguer artesanal, molho especial e queijo à sua escolha (cheddar ou muçarela).' },
-      { id: 'combo-cheddar', name: 'Combo Cheddar House', price: 34.90, desc: 'Pão brioche, hambúrguer artesanal, molho especial, queijo cheddar e bacon crocante.' },
-      { id: 'combo-cheddar-caramelizado', name: 'Combo Cheddar Caramelizado', price: 34.90, desc: 'Pão brioche, hambúrguer artesanal, molho da casa, queijo cheddar e cebola caramelizada. ' },
-      { id: 'combo-bacon', name: 'Combo Prime Bacon', price: 37.90, desc: 'Pão brioche, hambúrguer artesanal, molho especial, queijo (cheddar ou muçarela), bacon crocante e cebola caramelizada. ' },
-      { id: 'combo-cheddar-duplo', name: 'Combo Cheddar Duplo', price: 41.00, desc: 'Pão, 2 hambúrguers artesanais + cheddar, molho especial e cebola caramelizada. ' },
+      { id: 'combo-original', image: 'https://i.postimg.cc/vBqRDJJW/Chat-GPT-Image-1-de-ago-de-2026-12-30-36.png', name: 'Combo Original', price: 29.90, desc: 'Pão brioche, hambúrguer artesanal, molho especial e queijo à sua escolha (cheddar ou muçarela).' },
+      { id: 'combo-cheddar', image: 'https://i.postimg.cc/KYsSYSSp/Chat-GPT-Image-31-de-jul-de-2026-11-06-42.png', name: 'Combo Pig Cheddar', price: 34.90, desc: 'Pão brioche, hambúrguer artesanal, molho especial, queijo cheddar e bacon crocante.' },
+      { id: 'combo-cheddar-caramelizado', image: 'https://i.postimg.cc/KYsSYSSp/Chat-GPT-Image-31-de-jul-de-2026-11-06-42.png', name: 'Combo Cheddar Caramelizado', price: 34.90, desc: 'Pão brioche, hambúrguer artesanal, molho da casa, queijo cheddar e cebola caramelizada. ' },
+      { id: 'combo-bacon', image: 'https://i.postimg.cc/0ys8gsPz/806e790f-38f4-49ce-9024-3009ff4d5e3b.jpg', name: 'Combo The Big One', price: 37.90, desc: 'Pão brioche, hambúrguer artesanal, molho especial, queijo (cheddar ou muçarela), bacon crocante e cebola caramelizada. ' },
+      { id: 'combo-cheddar-duplo', image: 'https://i.postimg.cc/VNsm6WSM/Chat-GPT-Image-1-de-ago-de-2026-12-30-26.png', name: 'Combo Cheddar Duplo', price: 41.00, desc: 'Pão, 2 hambúrguers artesanais + cheddar, molho especial e cebola caramelizada. ' },
     ];
 
     const BURGERS = [
-      { id: 'burger-original', name: 'Original', price: 19.90, desc: 'Pão brioche, hambúrguer artesanal, molho especial e queijo à sua escolha (cheddar ou muçarela).' },
-      { id: 'burger-cheddar', name: 'Cheddar House', price: 24.90, desc: 'Pão brioche, hambúrguer artesanal, molho da casa, queijo cheddar e bacon crocante.' },
-      { id: 'burger-cheddar-caramelizado', name: 'Cheddar Caramelizado', price: 24.90, desc: 'Pão brioche, hambúrguer artesanal, molho da casa, queijo cheddar e cebola caramelizada.' },
-      { id: 'burger-bacon', name: 'Prime Bacon', price: 27.90, desc: 'Pão brioche, hambúrguer artesanal, molho especial, queijo (cheddar ou muçarela), bacon crocante e cebola caramelizada.' },
-      { id: 'cheddar-duplo', name: 'Cheddar Duplo', price: 31.99, desc: 'Pão brioche, 2 hambúrguers artesanais + cheddar, molho especial e cebola caramelizada.' },
+      { id: 'burger-original', image: 'https://i.postimg.cc/vBqRDJJW/Chat-GPT-Image-1-de-ago-de-2026-12-30-36.png',name: 'Original', price: 19.90, desc: 'Pão brioche, hambúrguer artesanal, molho especial e queijo à sua escolha (cheddar ou muçarela).' },
+      { id: 'burger-cheddar', image: 'https://i.postimg.cc/KYsSYSSp/Chat-GPT-Image-31-de-jul-de-2026-11-06-42.png', name: 'Pig Cheddar', price: 24.90, desc: 'Pão brioche, hambúrguer artesanal, molho da casa, queijo cheddar e bacon crocante.' },
+      { id: 'burger-cheddar-caramelizado', image: 'https://i.postimg.cc/KYsSYSSp/Chat-GPT-Image-31-de-jul-de-2026-11-06-42.png', name: 'Cheddar Caramelizado', price: 24.90, desc: 'Pão brioche, hambúrguer artesanal, molho da casa, queijo cheddar e cebola caramelizada.' },
+      { id: 'burger-bacon', image: 'https://i.postimg.cc/0ys8gsPz/806e790f-38f4-49ce-9024-3009ff4d5e3b.jpg', name: 'The Big One', price: 27.90, desc: 'Pão brioche, hambúrguer artesanal, molho especial, queijo (cheddar ou muçarela), bacon crocante e cebola caramelizada.' },
+      { id: 'cheddar-duplo', image: 'https://i.postimg.cc/VNsm6WSM/Chat-GPT-Image-1-de-ago-de-2026-12-30-26.png', name: 'Cheddar Duplo', price: 31.99, desc: 'Pão brioche, 2 hambúrguers artesanais + cheddar, molho especial e cebola caramelizada.' },
     ];
 
     const POTATOES = [
-      { id: 'bp', name: 'Batata Pequena', price: 6.00, desc: 'Porção de batata frita pequena, crocante e sequinha.' },
-      { id: 'bm', name: 'Batata Média', price: 10.00, desc: 'Porção de batata frita média, crocante e sequinha.' },
+      { id: 'bp', image:'https://s2-receitas.glbimg.com/6TYFXwek9ZpNXFeOzas09KizMKk=/0x0:1280x853/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2020/T/K/Hh8h2GR96v392DAkAqyA/912c9713-321e-4dfd-bca9-888c05c5ce50.jpeg', name: 'Batata Pequena', price: 6.00, desc: 'Porção de batata frita pequena, crocante e sequinha.' },
+      { id: 'bm', image:'https://s2-receitas.glbimg.com/6TYFXwek9ZpNXFeOzas09KizMKk=/0x0:1280x853/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2020/T/K/Hh8h2GR96v392DAkAqyA/912c9713-321e-4dfd-bca9-888c05c5ce50.jpeg', name: 'Batata Média', price: 10.00, desc: 'Porção de batata frita média, crocante e sequinha.' },
     ];
 
     const DRINKS = [
-      { id: 'ref', name: 'Refrigerante Lata', price: 6.00, desc: 'Refrigerante gelado de350ml.' },
+      { id: 'ref', image:'https://guiadossolteiros.com/wp-content/uploads/2012/11/refrigerante-com-gas.jpg',name: 'Refrigerante Lata', price: 6.00, desc: 'Refrigerante gelado de350ml.' },
     ];
 
     let cart = [];
@@ -842,23 +851,48 @@
     const fmtMoneyRaw = (v) => v.toFixed(2).replace('.', ',');
 
     function renderCard(item, sectionType, showBadge) {
-      const hasAddons = sectionType === 'combo' || sectionType === 'burger';
-      const badge = showBadge ? `<div class="item-meta">Acompanha batata + refri</div>` : '';
-      const onClick = hasAddons ? `onclick="openAddonsModal('${sectionType}', '${item.id}')"` : `onclick="addToCartDirect('${sectionType}', '${item.id}')"`;
-      return `
- <div class="card" style="cursor:pointer;">
-          <div class="card-header">
-            <div class="item-name">${item.name}</div>
-            <div class="item-price">${fmtMoney(item.price)}</div>
-          </div>
-          ${badge}
-          <div class="item-desc">${item.desc}</div>
-          <button class="btn-add" ${onClick}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            Adicionar </button>
+    const hasAddons = sectionType === 'combo' || sectionType === 'burger';
+    const badge = showBadge
+        ? `<div class="item-meta">Acompanha batata + refri</div>`
+        : '';
+
+    const onClick = hasAddons
+        ? `onclick="openAddonsModal('${sectionType}', '${item.id}')"`
+        : `onclick="addToCartDirect('${sectionType}', '${item.id}')"`;
+
+
+    return `
+        <div class="card">
+
+            <img
+                src="${item.image}"
+                alt="${item.name}"
+                class="card-image"
+                ${onClick}
+            >
+
+            <div class="card-header">
+                <div class="item-name">${item.name}</div>
+                <div class="item-price">${fmtMoney(item.price)}</div>
+            </div>
+
+            ${badge}
+
+            <div class="item-desc">${item.desc}</div>
+
+            <button class="btn-add" ${onClick}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2.5"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"/>
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+                Adicionar
+            </button>
+
         </div>
-      `;
-    }
+    `;
+}
 
     function renderSection(list, containerId, sectionType, showBadge = false) {
       document.getElementById(containerId).innerHTML = list.map(it => renderCard(it, sectionType, showBadge)).join('');
